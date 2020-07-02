@@ -13,9 +13,11 @@ firstPublicationDate: "2020-02-12"
 spec:
   endpoints:
     - name: 'hello-greeting-endpoint'
-      port: 8080
+      public: true
+      targetPort: 8080
       attributes:
         path: /hello/greeting/che-user
+        discoverable: true
   containers:
     - image: "quay.io/sunix/rh-training-crw-quarkus-maven:DO328-quarkus-devfile"
       name: maven
