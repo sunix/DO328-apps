@@ -15,7 +15,10 @@ spec:
    -  name: "quarkus"
       public: true
       targetPort: 8080
-      protocol: http
+      attributes:
+        protocol: http
+        type: terminal
+        discoverable: true
   containers:
     - image: "quay.io/sunix/rh-training-crw-quarkus-maven:DO328-quarkus-devfile"
       name: maven
