@@ -17,7 +17,7 @@ spec:
       attributes:
         path: /hello/greeting/che-user
   containers:
-    - image: "quay.io/sunix/rh-training-crw-quarkus-maven@sha256:33bdc506cda5d23f3d354cba90571688d15d2cdf02358d40aa8f8fff731f054a"
+    - image: "quay.io/sunix/rh-training-crw-quarkus-maven:DO328-quarkus-devfile"
       name: maven
       memoryLimit: "3500Mi"
       args:
