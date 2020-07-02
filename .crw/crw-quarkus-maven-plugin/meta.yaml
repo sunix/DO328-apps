@@ -11,7 +11,6 @@ repository: https://github.com/redhat-developer/vscode-quarkus
 category: Language
 firstPublicationDate: "2020-02-12"
 spec:
-
   endpoints:
    -  name: "quarkus"
       public: true
