@@ -6,5 +6,5 @@ RUN cd /tmp ; \
     cd quarkus-quickstarts/getting-started && \
     mvn clean package && \
     chmod go+rw -R /home/jboss/.m2/* && \
-    rm /tmp/* -rf
+    rm /tmp/* -rf || true
     
