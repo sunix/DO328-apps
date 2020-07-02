@@ -10,26 +10,9 @@ projects:
       location: "https://github.com/ebramirez/quarkus-quickstarts.git"
       sparseCheckoutDir: getting-started
 components:
-  -
+  - alias: maven
     type: chePlugin
-    id: redhat/quarkus-java11/latest
-  -
-    type: dockerimage
-    alias: centos-quarkus-maven
-    image: quay.io/eclipse/che-quarkus:nightly
-    env:
-      - name: JAVA_OPTS
-        value: "-XX:MaxRAMPercentage=50.0 -XX:+UseParallelGC -XX:MinHeapFreeRatio=10
-          -XX:MaxHeapFreeRatio=20 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90
-          -Dsun.zip.disableMemoryMapping=true -Xms20m -Djava.security.egd=file:/dev/./urandom
-          -Duser.home=/home/user"
-      - name: MAVEN_OPTS
-        value: $(JAVA_OPTS)  
-    memoryLimit: 512M
-    mountSources: true
-    volumes:
-      - name: m2
-        containerPath: /home/user/.m2
+    reference: https://github.com/sunix/DO328-apps/raw/DO328-quarkus-devfile/.crw/crw-quarkus-maven-plugin/meta.yaml
     endpoints:
       - name: 'hello-greeting-endpoint'
         port: 8080
@@ -42,7 +25,7 @@ commands:
     actions:
       -
         type: exec
-        component: centos-quarkus-maven
+        component: maven
         command: "./mvnw package"
         workdir: ${CHE_PROJECTS_ROOT}/quarkus-quickstarts/getting-started
   -
@@ -50,7 +33,7 @@ commands:
     actions:
       -
         type: exec
-        component: centos-quarkus-maven
+        component: maven
         command: "./mvnw compile quarkus:dev"
         workdir: ${CHE_PROJECTS_ROOT}/quarkus-quickstarts/getting-started
   -
