@@ -13,12 +13,6 @@ components:
   - alias: maven
     type: chePlugin
     reference: https://github.com/sunix/DO328-apps/raw/DO328-quarkus-devfile/.crw/crw-quarkus-maven-plugin/meta.yaml
-    endpoints:
-      - name: 'hello-greeting-endpoint'
-        port: 8080
-        attributes:
-          path: /hello/greeting/che-user
-
 commands:
   -
     name: Package
