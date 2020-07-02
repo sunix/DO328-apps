@@ -16,12 +16,6 @@ spec:
       public: true
       targetPort: 8080
       protocol: http
-    - name: 'hello-greeting-endpoint'
-      public: true
-      targetPort: 8080
-      protocol: http
-      attributes:
-        path: /hello/greeting/che-user
   containers:
     - image: "quay.io/sunix/rh-training-crw-quarkus-maven:DO328-quarkus-devfile"
       name: maven
