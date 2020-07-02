@@ -1,9 +1,9 @@
 
 
-FROM registry.redhat.io/codeready-workspaces/plugin-java11-rhel8:2.2
+FROM quay.io/crw/plugin-java11-rhel8:latest
 RUN cd /tmp ; \
     git clone https://github.com/ebramirez/quarkus-quickstarts.git && \
     cd quarkus-quickstarts/getting-started && \
     mvn clean compile && \
-    rm /tmp/uarkus-quickstarts/ -rf
+    rm /tmp/quarkus-quickstarts/ -rf
     
