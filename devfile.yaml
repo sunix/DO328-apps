@@ -20,7 +20,7 @@ commands:
       -
         type: exec
         component: maven
-        command: "./mvnw package"
+        command: "mvn package"
         workdir: ${CHE_PROJECTS_ROOT}/quarkus-quickstarts/getting-started
   -
     name: Start Development mode (Hot reload + debug)
@@ -28,7 +28,7 @@ commands:
       -
         type: exec
         component: maven
-        command: "./mvnw compile quarkus:dev"
+        command: "mvn compile quarkus:dev"
         workdir: ${CHE_PROJECTS_ROOT}/quarkus-quickstarts/getting-started
   -
     name: Attach remote debugger
